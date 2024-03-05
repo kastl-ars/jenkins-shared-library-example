@@ -1,12 +1,17 @@
 #!/usr/bin/env groovy
 
-pipeline {
-    agent any
-    stages {
-        stage('Demo') {
-            steps {
-                echo 'Hello from the centralized Jenkinsfile'
-            }
-        }
-    }
-}
+import org.jenkinsci.plugins.pipeline.modeldefinition.Utils
+
+
+def call(Map pipelineParams) {
+    node('markdownlint') {
+        try {
+
+            echo "Hello"
+
+        } // try
+        catch (err) {
+            error "${err}"
+        } // catch
+    } // node
+} // definition
