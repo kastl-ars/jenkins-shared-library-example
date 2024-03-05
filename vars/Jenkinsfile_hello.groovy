@@ -4,7 +4,7 @@ import org.jenkinsci.plugins.pipeline.modeldefinition.Utils
 
 
 def call(Map pipelineParams) {
-    node('markdownlint') {
+    node('*') {
         try {
 
             echo "Hello"
